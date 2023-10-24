@@ -97,3 +97,26 @@ body{
     display: flex;
     justify-content: center;
 }
+/* second-page---------------> */
+.mobile_number{
+    padding:10px;
+    width: 100%;
+}
+
+.page_2_footer{
+    position: absolute;
+    background-color: rgb(53, 99, 250); 
+    bottom: 0;
+    width: 100%;
+    padding:20px;
+    display: flex;
+    justify-content: center;
+}
+.proceed_btn{
+    background: transparent;
+    border: none;
+    outline: none;
+    color:white;
+    font-size: 18px;
+
+}
