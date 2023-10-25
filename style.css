@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
 }
 header{
     background-color: rgb(53, 99, 250);
@@ -124,14 +126,18 @@ body{
 
 /* third page-----------------------> */
 .user_profile{
-    height:50px;
-    width: 50px;
+    height:80px;
+    width: 80px;
     text-align: center;
     color:white;
-    background-color: brown;
+    background-color: rgb(199, 24, 88);
     border-radius: 50%;
     padding:16px;
     margin:20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
 }
 .user_container{
 display: flex;
@@ -210,6 +216,7 @@ align-items: center;
     align-items: center;
     margin:20px 10px;
     gap:10px;
+    font-size: 18px;
 }
 
 .number_page{
@@ -287,4 +294,39 @@ text-align: center;}
     100% {
         box-shadow: inset 0px 0px 0px 30px #4bb71b;
     }
+}
+
+.loader,.loader2,.loader3{
+    height:50px;
+    width: 50px;
+    border-radius: 50%;
+    border-top: 3px solid red;
+    animation: spin 1s infinite linear;
+    display: none;
+}
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+
+.number_page main{
+    height:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
+    width: 100%;
+    text-transform: capitalize;
+    text-align:center;
+    color:red;
+
+}
+.number_page main p{
+    text-align: center;
+    width: 100%;
 }
