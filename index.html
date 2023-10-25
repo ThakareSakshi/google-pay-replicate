@@ -112,9 +112,9 @@
       <div class="user_container">
         <div class="user_profile">S</div>
 
-        <p class="paying_to_number">Paying to number</p>
+        <p class="paying_to_number" style="font-weight: 800;">Paying to number</p>
         <div class="amount">
-          <span> RS. </span>
+          <span> ₹ </span>
           <input type="text" class="Pay_amount" placeholder="0" />
         </div>
         <div><input type="text" class="note" placeholder="Add a Note" />
@@ -122,7 +122,7 @@
       </div>
 
       <footer class="third_page_footer">
-        <button id="pay_amount_btn">pay 20 Rs.</button>
+        <button id="pay_amount_btn">pay </button>
       </footer>
     </section>
     <!-- --------------------enter pin page-----------------------  -->
@@ -130,7 +130,7 @@
       <div class="user_container">
         <div class="user_profile">S</div>
 
-        <p>Paying to number</p>
+        <p class="paying_to_number" style="font-weight: 800;">Paying to number</p>
         
       </div>
       <main class="Authentication">
@@ -142,8 +142,26 @@
       </main>
 
       <footer class="third_page_footer">
-        <button id="pay_amount_btn">pay</button>
+        <button id="final_payment">pay</button>
       </footer>
+    </section>
+
+    <section class="payment successful">
+      <span id="back_btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+      <div></div>
+
+      <div>
+
+        <div class="success-animation">
+          <!-- <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /></svg> -->
+          <img src="payment_success.gif" alt="">
+          <h3 style="color:#4a85f4">payment successful</h3>
+          </div>
+        
+       
+      </div>
+      
+
     </section>
 
     <script src="./script.js"></script>
