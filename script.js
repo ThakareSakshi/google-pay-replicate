@@ -1,113 +1,53 @@
-// start--------------->
+// --------------fetching all pages------------------------>
 
-let payment_section = document.querySelector(".payment");
+let mainPage=document.querySelector(".main_page")
+let numberpage=document.querySelector(".number_page")
+let AmountPage=document.querySelector(".amount_page")
+let PinPage=document.querySelector(".Pin_page")
+let finalpaymentPage=document.querySelector(".final_payment")
+let errorPage=document.querySelector(".error_page")
 
-// second page---------------->
+// -----------fetching all btns----------------->
+const pay_btn=document.querySelector(".pay_btn");
+const proceed_btn=document.querySelector(".proceed_btn")
+const pay_amount_btn=document.querySelector("#pay_amount_btn")
 
 
-// let mobile_number = document.querySelector(".mobile_number").value;
-// let proceed_btn = document.querySelector(".preceed_btn");
-// proceed_btn.addEventListener("click", () => {
-//   let validate_number = Check_mobile_number(mobile_number.value);
-//   validate_number
-//     .then((mobile_number_value) => {
-//       Selection.innerHTML = `<section class="payment">
-//      <div class="user_container">
-//        <div class="user_profile">S</div>
 
-//        <p>Paying to +91-${mobile_number_value}</p>
-//        <div class="amount">
-//          <span> RS. </span>
-//          <input type="text" class="Pay_amount" placeholder="0" />
-//        </div>
-//        <div><input type="text" class="note" placeholder="Add a Note" />
-//        </div>
-//      </div>
 
-//      <footer class="third_page_footer">
-//        <button id="pay_amount_btn">pay 20 Rs.</button>
-//      </footer>
-//    </section> -->
-//     <!-- <section class="payment">
-//      <div class="user_container">
-//        <div class="user_profile">S</div>
+// --------------new payment---------------->
+pay_btn.addEventListener("click",()=>{
+    mainPage.style.display="none";
+   numberpage.style.display="block";
 
-//        <p>Paying to number</p>
-       
-//      </div>
-//      <main class="Authentication">
-//        Amount Rs.
-//       <span> Enter 6 digit pin </span>
-//       <input type="password" id="pin" maxlength="6" placeholder=" ......">
+})
 
-       
-//      </main>
+// -----------------proceed payment-------------->
+proceed_btn.addEventListener("click",()=>{
+    let validate_mobile=new Promise((resolve,reject)=>{
+        let mobile_number=document.querySelector(".mobile_number");
+        if(mobile_number.value.length<10 || mobile_number.value.length>10 ){
+            reject("enter valid mobile number");
+        }
+        else{
+            resolve(mobile_number.value);
+        }
+    })
 
-//      <footer class="third_page_footer">
-//        <button id="pay_amount_btn">pay</button>
-//      </footer>
-//    </section>`;
-//     })
-//     .catch((msg) => {
-//       let main = document.querySelector(".payment main");
-//       main.innerText = msg;
-//     });
-// });
-
-let Check_mobile_number = (Mobile_number) => {
-  return new Promise((resolve, rejected) => {
-    if (Mobile_number.length < 10 || Mobile_number.length > 10) {
-      rejected("number is not valid");
-    } else {
-      resolve(Mobile_number);
-    }
-  });
-};
-
-let move_to_add_number_page = () => {
-  return new Promise((resolve, reject) => {
-    let pay_btn = document.querySelector(".pay_btn");
-    pay_btn.addEventListener("click", () => {
-      setTimeout(() => {
-        payment_section.innerHTML = `
-       <header>
-             <div>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/2560px-Google_Pay_Logo.svg.png"
-                alt=""
-                class="gpay_logo"
-              />
-            </div>
-            <input type="text" class="mobile_number" placeholder="Enter 10 digit mobile number">
-        </header>
-        <main class="">
+    setTimeout(()=>{
+        validate_mobile.then((mobile_number)=>{
+            console.log("pressed")
+            numberpage.style.display="none";
+            document.querySelector(".paying_to_number").innerText="Paying to +91-"+mobile_number
+            AmountPage.style.display="block";
+           
             
-        </main>
-        <footer class="page_2_footer">
-            <button class="proceed_btn">Procced</button>
-        </footer>`;
-        
-        resolve();
-        
-      }, 2000);
-    });
-  });
-};
+        }).catch((msg)=>{
+            document.querySelector(".number_page main").innerText=msg;
+        })
 
-
-
-
-
-let start= move_to_add_number_page();
-start.then((mobile_number)=>{
-    let mobile_number1=document.querySelector(".mobile_number");
-    let preceed_btn=document.querySelector(".proceed_btn");
-        preceed_btn.addEventListener("click",()=>{
-            Check_mobile_number(mobile_number1.value);
-        }).then()
+    },2000);
     
+})
 
-    
-}
-
-)
+//----------------add amount---->

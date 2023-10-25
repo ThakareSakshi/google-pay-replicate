@@ -207,3 +207,14 @@ align-items: center;
     margin:20px 10px;
     gap:10px;
 }
+
+.number_page{
+    display: none;
+    
+}
+.amount_page{
+    display: none;
+}
+.pin_page{
+    display: none;
+}
