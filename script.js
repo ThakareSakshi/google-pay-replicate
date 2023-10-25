@@ -6,6 +6,7 @@ let AmountPage=document.querySelector(".amount_page")
 let PinPage=document.querySelector(".pin_page")
 let finalpaymentPage=document.querySelector(".successful")
 let errorPage=document.querySelector(".error_page")
+let reason=document.querySelector(".reason")
 let loader=document.querySelector(".loader")
 let loader2=document.querySelector(".loader2")
 let loader3=document.querySelector(".loader3")
@@ -15,7 +16,7 @@ const pay_btn=document.querySelector(".pay_btn");
 const proceed_btn=document.querySelector(".proceed_btn")
 const pay_amount_btn=document.querySelector("#pay_amount_btn")
 const final_payment_btn=document.querySelector("#final_payment")
-
+const back_btn=document.querySelector("#back-btn")
 
 
 
@@ -87,6 +88,10 @@ pay_amount_btn.addEventListener("click",()=>{
       document.querySelector(".pin_page .paying_to_number").innerText=document.querySelector(".paying_to_number").innerText;
 
 
+    }).catch((msg)=>{
+        errorPage.style.display="flex";
+        reason.innerText=msg;
+        AmountPage.style.display="none";
     })
 })
 
@@ -96,7 +101,7 @@ final_payment_btn.addEventListener("click",()=>{
     let validate_pin=new Promise((resolve,reject)=>{
         let pin=document.getElementById("pin");
         if(pin.value.length<6){
-            reject("wrong pin");
+            reject("wrong pin pin must be of six digits");
            }
            else{
             resolve(Pay_amount.value);
@@ -111,7 +116,18 @@ final_payment_btn.addEventListener("click",()=>{
             finalpaymentPage.style.display="block";
         },3000);
     }).catch((msg)=>{
-        console.log(msg);
+        errorPage.style.display="flex";
+        reason.innerText=msg;
+       PinPage.style.display="none";
     })
 })
 
+
+// ----------------------back btn------------------>
+
+back_btn.addEventListener("click",()=>{
+    setTimeout(()=>{
+        errorPage.style.display="none";
+    mainPage.style.display="block"
+    },2000)
+})
