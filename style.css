@@ -105,7 +105,8 @@ body{
 /* second-page---------------> */
 .mobile_number{
     padding:10px;
-    width: 100%;
+    width: 90%;
+    margin:20px;
 }
 
 .page_2_footer{
@@ -350,4 +351,8 @@ text-align: center;}
     flex-direction: column;
     align-items: center;
     display: none;
+}
+.back_to_main{
+    color:rgb(74, 74, 235);
+    
 }

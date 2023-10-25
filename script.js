@@ -114,6 +114,8 @@ final_payment_btn.addEventListener("click",()=>{
             document.querySelector("#money").innerText= Pay_amount.value;
             PinPage.style.display="none";
             finalpaymentPage.style.display="block";
+            var audio = new Audio("./payment_successfull_audio.mp3");
+             audio.play();
         },3000);
     }).catch((msg)=>{
         errorPage.style.display="flex";
